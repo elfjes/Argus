@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block main %}
+  <h2>Endpoints</h2>
+  <ul>
+    {% for endpoint in incident.endpoint_events.all %}
+    <li>{{ endpoint.name }} - {{ endpoint.description }}</li>
+    {% endfor %}
+  </ul>
+{% endblock main %}

@@ -45,5 +45,6 @@ urlpatterns = [
     path("api/v2/", include(("argus.site.api_v2_urls", "api"), namespace="v2")),
     path("api/", MetadataView.as_view(), name="metadata"),
     path("json-schema/<slug:slug>", SchemaView.as_view(), name="json-schema"),
+    path("geant/", include("argus.geant.urls")),
     path("", index, name="api-home"),
 ]
