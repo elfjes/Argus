@@ -221,10 +221,10 @@ ASGI_APPLICATION = "argus.ws.asgi.application"
 ARGUS_DISABLE_REDIS = get_bool_env("ARGUS_DISABLE_REDIS", False)
 if ARGUS_DISABLE_REDIS:
     CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "channels.layers.InMemoryChannelLayer"
+        "default": {
+            "BACKEND": "channels.layers.InMemoryChannelLayer",
+        },
     }
-}
 else:
     _REDIS = urlsplit("//" + get_str_env("ARGUS_REDIS_SERVER", "127.0.0.1:6379"))
     CHANNEL_LAYERS = {
@@ -234,7 +234,7 @@ else:
                 "hosts": [(_REDIS.hostname, _REDIS.port or 6379)],
             },
         },
-}
+    }
 # fmt: on
 
 # Project specific settings
