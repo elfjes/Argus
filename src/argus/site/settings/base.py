@@ -54,9 +54,6 @@ INSTALLED_APPS = [
     "argus.notificationprofile",
     "argus.dev",
     "argus.htmx",
-
-    # Geant
-    "argus.geant"
 ]
 # fmt: on
 
