@@ -1,4 +1,8 @@
 {% extends "htmx/incidents/_incident_row.html" %}
+{% block incident_pk %}
+    <a href="{% url 'htmx_incident_detail' incident.pk %}"
+       title="Incident details">{{ incident.pk }}</a>
+{% endblock incident_pk %}
 {% block description %}
     GEANT!
     {% include "htmx/incidents/_incident_description.html" %}
