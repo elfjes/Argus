@@ -25,6 +25,7 @@ from argus.auth.views import ObtainNewAuthToken, AuthMethodListView
 from argus.dataporten import views as dataporten_views
 from argus.notificationprofile.views import SchemaView
 from argus.site.views import error, index, MetadataView
+from argus.htmx import urls as htmx_urls
 
 
 psa_urls = [
@@ -47,4 +48,4 @@ urlpatterns = [
     path("json-schema/<slug:slug>", SchemaView.as_view(), name="json-schema"),
     path("geant/", include("argus.geant.urls")),
     path("", index, name="api-home"),
-]
+] + htmx_urls.urlpatterns
