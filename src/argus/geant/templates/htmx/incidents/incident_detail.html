@@ -1,0 +1,13 @@
+{% extends "htmx/incidents/incident_detail.html" %}
+{% block incident_detail %}
+    <section id="events">
+        {% if incident.metadata.events %}
+            <h3>Events</h3>
+            <ul>
+                {% for event in incident.metadata.events %}
+                <li>{{ event.source }} - {{ event.description }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+    {% endif %}
+{% endblock incident_detail %}
