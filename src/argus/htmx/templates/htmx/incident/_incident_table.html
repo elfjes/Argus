@@ -66,6 +66,7 @@
                 <a hx-get="?page=1"
                    href="?page=1"
                    hx-indicator="#incident-list .htmx-indicator"
+                   hx-include=".incident-list-param"
                    class="join-item btn btn-neutral">« First</a>
               </li>
             {% endif %}
@@ -74,6 +75,7 @@
                 <a hx-get="?page={{ page.previous_page_number }}"
                    href="?page={{ page.previous_page_number }}"
                    hx-indicator="#incident-list .htmx-indicator"
+                   hx-include=".incident-list-param"
                    class="join-item btn btn-neutral">{{ page.previous_page_number }}</a>
               </li>
             {% endif %}
@@ -91,6 +93,7 @@
                 <a hx-get="?page={{ page.next_page_number }}"
                    href="?page={{ page.next_page_number }}"
                    hx-indicator="#incident-list .htmx-indicator"
+                   hx-include=".incident-list-param"
                    class="join-item btn btn-neutral">{{ page.next_page_number }}</a>
               </li>
             {% endif %}
@@ -99,6 +102,7 @@
                 <a hx-get="?page={{ page.paginator.num_pages }}"
                    href="?page={{ page.paginator.num_pages }}"
                    hx-indicator="#incident-list .htmx-indicator"
+                   hx-include=".incident-list-param"
                    class="join-item btn btn-neutral">» Last</a>
               </li>
             {% endif %}
